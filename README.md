@@ -31,7 +31,7 @@ This application can be setup with the following steps:
 ___
 ## Architecture, Structure and Rationale
 ### MVC Architecture
-This web app was created with the Model View Controller. As the challenge defined no visual requirements, the views component of this app was ommitted.
+This web app was created with the Model View Controller. As the challenge defined no visual requirements, the views component of this app was ommitted. MVC seemed to be the clearest path forward for building a Rest API with express.js as it elegantly splits the connection to the db, the api end-points and the SQL commands to allow for easy to understand code and scalability should additional end points be added.
 
 ### MySQL Hosted by ClearDB on Heroku
 To ensure a mysql database can be accessed from any installation of the application, the database was setup on heroku via ClearDB
