@@ -17,4 +17,15 @@ Mood.list = function getAllMoods(start_date, end_date, result) {
   });   
 };
 
+Mood.createMood = function createUser(newMood, result) {    
+  sql.query("INSERT INTO mood_entry set ?", newMood, function (err, res) {
+    if(err) {
+      result(err, null);
+    }
+    else{
+      result(null, res.insertId);
+    }
+  });           
+};
+
 module.exports = Mood;

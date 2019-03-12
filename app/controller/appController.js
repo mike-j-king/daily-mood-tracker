@@ -17,7 +17,21 @@ exports.list_all_moods = function(req, res) {
     Mood.list(req.body.start_date, req.body.end_date, function(err, mood) {
       if (err)
         res.send(err);
-      res.send(mood);
+      res.send({mood});
+    });
+  }
+};
+
+exports.create_mood = function(req, res) {
+  var new_mood = new Mood(req.body);
+  if(!new_mood.mood ||  !["Happy", "Sad", "Neutral"].includes(new_mood.mood)){
+    res.status(400).send({ error:true, message: 'Error: Incorrect mood provided - Please provide a mood which is one of the following: Happy, Sad or Neutral' });
+  }
+  else{
+    Mood.createMood(new_mood, function(err, mood) {
+      if (err)
+        res.send(err);
+      res.json({message: "Daily Mood Successfully Added!"});
     });
   }
 };

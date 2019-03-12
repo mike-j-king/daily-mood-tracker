@@ -23,18 +23,11 @@ Returns a JSON of all mood entries between two dates
       }
     ]
     
-
-###Create New Mood - POST('/moods'):
+### Create New Mood - POST ['/moods']:
 Creates a new mood to the database where the mood must be "Happy", "Sad" or "Neutral". A note can also be supplied in the request body (optional).
 
 #### Example Requesty Body:
     {"mood": "Happy", "note": "today was a good day"}
 
 #### Example Response:
-    "Mood Successfully Created"
-
-### Update existing Mood - PUT('/moods/:moodID')
-Method to update the note for a specific mood
-
-#### Example Requesty Body:
-    {"note": "today was another good day"}
+    {"message": "Daily Mood Successfully Added!"}
