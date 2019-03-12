@@ -8,5 +8,5 @@ console.log('API server started on: ' + port);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./app/routes/approutes');
+var routes = require('./app/routes/appRoutes');
 routes(app);
