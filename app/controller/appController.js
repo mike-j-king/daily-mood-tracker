@@ -35,3 +35,11 @@ exports.create_mood = function(req, res) {
     });
   }
 };
+
+exports.update_mood = function(req, res) {
+  Mood.updateById(req.params.moodId, req.body.note, function(err, mood) {
+    if (err)
+      res.send(err);
+    res.json(mood);
+  });
+};

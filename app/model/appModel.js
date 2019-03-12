@@ -28,4 +28,16 @@ Mood.createMood = function createUser(newMood, result) {
   });           
 };
 
+
+Mood.updateById = function(id, new_note, result){
+  sql.query("UPDATE mood_entry SET note = ? WHERE id = ?", [new_note, id], function (err, res) {
+    if(err) {
+      result(null, err);
+    }
+    else{   
+      result(null, res);
+    }
+  }); 
+};
+
 module.exports = Mood;
