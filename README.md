@@ -2,9 +2,11 @@
 
 ## API End-Points:
 ### List moods between start & end date - GET ['/moods']:
+request URL: https://daily-mood-tracker.herokuapp.com/moods
+
 Returns a JSON of all mood entries between two dates
 
-*Note: request must include a start_date and end_date in the format YYYY-MM-DD*
+*Note: request must include start_date and end_date in the request body with the format YYYY-MM-DD*
 #### Example Requesty Body:
     {"start_date": "2016-01-01", "end_date": "2020-01-01"}
 
@@ -27,6 +29,8 @@ Returns a JSON of all mood entries between two dates
 ___
     
 ### Create New Mood - POST ['/moods']:
+request URL: https://daily-mood-tracker.herokuapp.com/moods
+
 Creates a new mood to the database where the mood must be "Happy", "Sad" or "Neutral". A note can also be supplied in the request body (optional).
 
 #### Example Requesty Body:
@@ -38,6 +42,8 @@ Creates a new mood to the database where the mood must be "Happy", "Sad" or "Neu
 ___
 
 ### Update existing Mood - PUT ['/moods/:moodID']:
+request URL: https://daily-mood-tracker.herokuapp.com/moods/:moodID
+
 Method to update the note for a specific mood
 
 #### Example Requesty Body:
