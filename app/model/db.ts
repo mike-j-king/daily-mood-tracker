@@ -3,7 +3,7 @@
 import mysql = require('mysql');
 
 // connection to heroku mysql db
-var pool = mysql.createPool({
+let pool: mysql = mysql.createPool({
     connectionLimit: 10,
     host: 'us-cdbr-iron-east-03.cleardb.net',
     user: 'b756c5a53c8888',

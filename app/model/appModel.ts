@@ -10,7 +10,7 @@ export class Mood {
     this.note = mood.note;
   };
 
-  public list(start_date, end_date, result) {
+  public list(start_date: string, end_date: string, result: Function): void {
     sql.query("Select * from mood_entry Where timestamp >= ? And timestamp <= ?", [start_date, end_date], function (err, res) {
       if(err) {
         result(null, err);
@@ -21,8 +21,8 @@ export class Mood {
     });   
   };
 
-  public createMood(newMood, result) {    
-    sql.query("INSERT INTO mood_entry set ?", newMood, function (err, res) {
+  public createMood(newMood: Mood, result: Function): void {    
+    sql.query("INSERT INTO mood_entry set ?", newMood, function (err: Error, res: any) {
       if(err) {
         result(err, null);
       }
@@ -33,8 +33,8 @@ export class Mood {
   };
 
 
-  public updateById(id, new_note, result) {
-    sql.query("UPDATE mood_entry SET note = ? WHERE id = ?", [new_note, id], function (err, res) {
+  public updateById(id: number, new_note: string, result): void {
+    sql.query("UPDATE mood_entry SET note = ? WHERE id = ?", [new_note, id], function (err: Error, res: any) {
       if(err) {
         result(null, err);
       }

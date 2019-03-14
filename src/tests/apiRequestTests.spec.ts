@@ -19,8 +19,8 @@ context('GET Request for retreiving List of moods', () => {
   })
 
   describe('Request body with incorrectly formatted start & end dates', () => {
-    let start_date = '01-01-2015'
-    let end_date = '2019/01/01'
+    let start_date: String = '01-01-2015'
+    let end_date: String = '2019/01/01'
     it('should return JSON error & message', () => {
       return chai.request(app).get('/moods').send({start_date: start_date}).send({end_date: end_date})
         .then(res => {
@@ -31,8 +31,8 @@ context('GET Request for retreiving List of moods', () => {
   })
   
   describe('Dates correctly formatted in request body', () => {
-    let start_date = '2015-01-01'
-    let end_date = '2020-01-01'
+    let start_date: String = '2015-01-01'
+    let end_date: String = '2020-01-01'
     it('should return JSON of moods', () => {
       return chai.request(app).get('/moods').send({start_date: start_date}).send({end_date: end_date})
         .then(res => {

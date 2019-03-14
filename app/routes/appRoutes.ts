@@ -3,9 +3,9 @@
 import { appController } from '../controller/appController';
 
 
-export = function(app) {
+export = function(app: any) {
 
-  let dailyMoodTracker = new appController()
+  let dailyMoodTracker: appController = new appController()
 
   app.route('/moods')
     .get(dailyMoodTracker.list_all_moods)

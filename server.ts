@@ -1,7 +1,7 @@
 import express = require('express')
 let app = express(),
     bodyParser = require('body-parser');
-let port = process.env.PORT || 3000;
+let port: String | Number = process.env.PORT || 3000;
 app.listen(port);
 console.log('API server started on: ' + port);
 
