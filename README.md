@@ -48,7 +48,15 @@ Error handling was put in place to ensure that the mood was either "Happy", "Sad
 
 Error handling was put in place to ensure a start_date and end_date is passed in the request body prior to returning a filtered list of moods
 
+Error handling was put in place to ensure a note is passed in the request body prior to updating a note for a particular moodID
 
+### Unit Tests
+
+Unit tests were created for each of the 3 API calls to test all edge cases where a user may miss or incorrectly enter information in the request body.
+
+Unit tests were developed with mocha/chai.
+
+Note: A test db was not set up for the testing of the PUT request to create a new mood, therefore each time the tests are run, a new entry will be created when testing this PUT request.
 
 ## API End-Points:
 ### List moods between start & end date - GET ['/moods']:
@@ -87,7 +95,7 @@ Creates a new mood to the database where the mood must be "Happy", "Sad" or "Neu
     {"mood": "Happy", "note": "today was a good day"}
 
 #### Example Response:
-    {"message": "Daily Mood Successfully Added!"}
+    {success: true "message": "Daily Mood Successfully Added!"}
 
 ___
 
@@ -97,4 +105,4 @@ request URL: https://daily-mood-tracker.herokuapp.com/moods/:moodID
 Method to update the note for a specific mood
 
 #### Example Requesty Body:
-    {"note": "today was another good day"}
+    {success: true, "note": "today was another good day"}
