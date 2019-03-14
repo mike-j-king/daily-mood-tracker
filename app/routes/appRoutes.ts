@@ -1,6 +1,11 @@
 'use strict';
-module.exports = function(app) {
-  var dailyMoodTracker = require('../controller/appController');
+
+import { appController } from '../controller/appController';
+
+
+export = function(app) {
+
+  let dailyMoodTracker = new appController()
 
   app.route('/moods')
     .get(dailyMoodTracker.list_all_moods)

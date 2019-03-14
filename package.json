@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mike-j-king/daily-mood-tracker#readme",
   "dependencies": {
+    "@types/body-parser": "^1.17.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "moment": "^2.24.0",

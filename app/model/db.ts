@@ -1,6 +1,6 @@
 'user strict';
 
-var mysql = require('mysql');
+import mysql = require('mysql');
 
 // connection to heroku mysql db
 var pool = mysql.createPool({
@@ -11,4 +11,4 @@ var pool = mysql.createPool({
     database: 'heroku_75d49d35a82afaa'
 });
 
-module.exports = pool;
+export = pool;
