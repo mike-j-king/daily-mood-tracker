@@ -10,3 +10,4 @@ app.use(bodyParser.json());
 
 import routes = require('./app/routes/appRoutes');
 routes(app);
+export default app;
